@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,14 +15,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('login.index', [
-        "page" => "Login"
+    return view('home', [
+        'title' => 'Home'
     ]);
 });
 
+Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
+Route::post('/login', [LoginController::class, 'authenticate']);
 
-Route::get('orders', function () {
+
+
+Route::get('/orders', function () {
     return view('orders.orders', [
-        "page" => "Orders"
+        "title" => "Orders"
     ]);
 });
