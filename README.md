@@ -1,4 +1,4 @@
 # projek_kopwar
 
 - Commit Ketiga:
-    migration dihilangkan terlebih dahulu agar tidak memusingkan
+    sebagian besar migration dihilangkan terlebih dahulu agar tidak memusingkan
