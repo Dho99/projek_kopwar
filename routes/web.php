@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,19 +14,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home', [
-        'title' => 'Home'
+Route::get('/login', [LoginController::class, 'index']);
+Route::post('/login', [LoginController::class, 'authenticate']);
+
+Route::post('/logout', [LoginController::class, 'logout']);
+
+Route::get('/orders', function () {
+    return view('orders.index', [
+        "title" => "Orders"
     ]);
 });
 
-Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
-Route::post('/login', [LoginController::class, 'authenticate']);
-
-
-
-Route::get('/orders', function () {
-    return view('orders.orders', [
-        "title" => "Orders"
+Route::get('/dashboard', function () {
+    return view('dashboard.index', [
+        "title" => "Dashboard"
     ]);
 });

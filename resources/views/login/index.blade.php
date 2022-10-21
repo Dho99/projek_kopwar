@@ -23,10 +23,10 @@
             <form action="/login" method="post">
 
                 @csrf
-                <h1 class="h3 mb-3 fw-normal text-center mt-5">Please Log in</h1>
+                <h1 class="h3 mb-4 fw-normal text-center mt-5">Please Log in</h1>
         
                 <div class="form-floating">
-                <input type="text" name="name" class="form-control  @error('name') is-invalid @enderror" id="name" autofocus required value="{{ old('name') }}">
+                <input type="text" name="name" class="form-control  @error('name') is-invalid @enderror" id="name" placeholder="Username" autofocus required value="{{ old('name') }}">
                 <label for="name">Username</label>
                 @error('name')
                     <div class="invalid-feedback">
@@ -43,7 +43,7 @@
                 <button class="w-100 btn btn-lg btn-primary mt-2" type="submit">Log in</button>
             </form>
 
-            <small class="d-block text-center mt-3">Not registered? <a href="/orders">Register Now</a></small>
+            <small class="d-block text-center mt-3">Not registered? <a href="/register">Register Now</a></small>
         </main>
 
     </div>
