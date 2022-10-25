@@ -60,61 +60,55 @@
       </div>
 
 
-      <p class="text-center mt-7 red-heart fs-4 fw-bold">Grafik Penggunaan Layanan Koperasi</p> 
-      <div class="btn-toolbar mb-2 mb-2">
-          <div class="btn-group ms-auto">
-            <button type="button" class="btn btn-sm btn-outline-secondary me-1">Export</button>
-          </div>
-          <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
-            <span data-feather="calendar" class="align-text-bottom"></span>
-            This week
-          </button>
-        </div>     
-      <div class="container-fluid mt-1 d-flex justify-content-center">
-        <canvas id="myChart" class="dashboard-canvas">
-            <script>
-                var xValues = [100,200,300,400,500,600,700,800,900,1000];
+    <div class="bg-grey container-fluid rounded mt-4">
+            <p class="text-center red-heart fs-4 fw-bold pt-4">Grafik Penggunaan Layanan Koperasi</p> 
+            
+            <div class="btn-toolbar mb-2 mb-2 pe-3">
+                <div class="btn-group ms-auto">
+                    <button type="button" class="btn btn-sm btn-outline-secondary me-1">Export</button>
+                </div>
+                <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+                    <span data-feather="calendar" class="align-text-bottom"></span>
+                    This week
+                </button>
+                </div>     
+            <div class="container-fluid mt-1 pb-4 d-flex justify-content-center">
+                <canvas id="myChart" class="dashboard-canvas">
+                    <script>
+                        var xValues = [100,200,300,400,500,600,700,800,900,1000];
 
-                new Chart("myChart", {
-                type: "line",
-                data: {
-                    labels: xValues,
-                    datasets: [{
-                        data: [860,1140,1060,4960,1070,1110,1330,2210,7830,2478],
-                        borderColor: "red",
-                        label: "Simpan",
-                        fill: false 
-                        },{
-                        data: [1600,1700,1700,3000,2000,2700,4000,5000,6000,7000],
-                        borderColor: "green",
-                        label: "Pinjam",
-                        fill: false
-                        }]
-                }, 
-                options: {
-                    responsive: true,
-                    plugins: {
-                    legend: {
-                        position: 'top',
-                    },
-                    // title: {
-                    //     display: true,
-                    //     text: 'Grafik Pengguna Layanan Koperasi',
-                    //     font: {
-                    //         size: 20,
-                    //         family: 'Poppins',
-                    //     }
-                    // }
-                    }
-                },       
-                });
+                        new Chart("myChart", {
+                        type: "line",
+                        data: {
+                            labels: xValues,
+                            datasets: [{
+                                data: [860,1140,1060,4960,1070,1110,1330,2210,7830,2478],
+                                borderColor: "red",
+                                label: "Simpan",
+                                fill: false 
+                                },{
+                                data: [1600,1700,1700,3000,2000,2700,4000,5000,6000,7000],
+                                borderColor: "green",
+                                label: "Pinjam",
+                                fill: false
+                                }]
+                        }, 
+                        options: {
+                            responsive: true,
+                            plugins: {
+                            legend: {
+                                position: 'top',
+                            },
+                            }
+                        },       
+                        });
 
-                
-            </script>
- 
-        </canvas>
-      </div>
-
+                        
+                    </script>
+        
+                </canvas>
+            </div>
+    </div>
 
 
     </div>

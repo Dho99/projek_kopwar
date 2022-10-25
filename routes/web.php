@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\ProductsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,8 +27,6 @@ Route::get('/orders', function () {
     ]);
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard.index', [
-        "title" => "Dashboard"
-    ]);
-});
+Route::get('/products', [ProductsController::class, 'index']);
+
+Route::get('/dashboard', [DashboardController::class, 'index']);
