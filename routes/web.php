@@ -1,9 +1,12 @@
 <?php
 
-use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\MemberController;
+use App\Http\Controllers\PinjamanController;
 use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\SimpananController;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +30,12 @@ Route::get('/orders', function () {
     ]);
 });
 
-Route::get('/products', [ProductsController::class, 'index']);
+Route::get('/products', [ProductsController::class, 'list']);
 
 Route::get('/dashboard', [DashboardController::class, 'index']);
+
+Route::get('/simpanan', [SimpananController::class, 'index']);
+
+Route::get('/pinjaman', [PinjamanController::class, 'index']);
+
+Route::get('/members', [MemberController::class, 'index']);

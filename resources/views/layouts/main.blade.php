@@ -18,7 +18,11 @@
   <body>
 
     <div class="container-fluid">
-        @yield('container')
+        @yield('container-fluid')
+    </div>
+
+    <div class="container">
+      @yield('container')
     </div>
 
 
