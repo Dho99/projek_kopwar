@@ -40,6 +40,13 @@ header .form-control{
 .bg-grey{
     background-color: #d1d1d1;
 }
+
+.box:hover{
+    background-color: #d1d1d1;
+    
+    transition: 0.1s;
+    font-weight: bold;
+}
  /* .bd-placeholder-img {
      font-size: 1.125rem;
      text-anchor: middle;

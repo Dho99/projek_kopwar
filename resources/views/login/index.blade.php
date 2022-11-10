@@ -20,19 +20,17 @@
         @endif
         
         <main class="form-signin">
+            <h1 class="h3 mb-4 fw-normal text-center mt-5">Please Log in</h1>
             <form action="/login" method="post">
-
                 @csrf
-                <h1 class="h3 mb-4 fw-normal text-center mt-5">Please Log in</h1>
-        
                 <div class="form-floating">
-                <input type="text" name="name" class="form-control  @error('name') is-invalid @enderror" id="name" placeholder="Username" autofocus required value="{{ old('name') }}">
-                <label for="name">Username</label>
-                @error('name')
-                    <div class="invalid-feedback">
-                        {{ $message }}
-                    </div>
-                @enderror
+                    <input type="text" name="nip" class="form-control @error('nip') is-invalid @enderror" id="nip" placeholder="NIP/NIUPTK" required autofocus value="{{ old('nip') }}">
+                    <label for="nip">NIP/NIUPTK</label>
+                    @error('nip')
+                        <div class="invalid-feedback mb-2">
+                            {{ $message }}
+                        </div>
+                    @enderror
                 </div>
 
                 <div class="form-floating">
@@ -41,6 +39,11 @@
                 </div>
         
                 <button class="w-100 btn btn-lg btn-primary mt-2" type="submit">Log in</button>
+
+                <div class="form-floating mt-2 d-flex justify-content-center">
+                  <input class="form-check-input" type="checkbox" name="remember" id="remember"><span class="ms-2">Remember Me</span>
+                </div>
+
             </form>
 
             <small class="d-block text-center mt-3">Not registered? <a href="/register">Register Now</a></small>

@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <div class="row">
     <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
-      <div class="position-sticky mt-3 sidebar-sticky">
+      <div class="position-sticky mt-1_2 sidebar-sticky">
         <ul class="nav flex-column">
           <li class="nav-item">
             <a class="nav-link {{ ($title === 'Dashboard') ? 'bg-success text-light' : '' }}" aria-current="page" href="/dashboard">
@@ -39,11 +39,14 @@
               Pinjaman
             </a>
           </li>
-          <li class="nav-item ms-2 fixed-bottom">
-            <form action="/logout" method="post">
-              @csrf
-              <button type="submit" class="btn btn-danger"><i class="bi bi-box-arrow-right"></i> Log Out</button>
-            </form>
+          <li class="nav-item p-2 mt-7">
+            <div class="bg-grey rounded pt-3 p-2 px-4">
+                Hi, {{ auth()->user()->name }}
+                <form action="/logout" method="post">
+                  @csrf
+                  <button class="btn btn-danger btn-sm mt-2"><span class="me-1" data-feather="log-out"></span> Log Out</button>
+                </form>
+            </div>
           </li>
         </ul>
       </div>

@@ -10,23 +10,27 @@ class LoginController extends Controller
     public function index()
     {
         return view('login.index', [
-            'title' => 'Login'
+            'title' => 'Login',
         ]);
     }
 
     public function authenticate(Request $request)
     {
         $credentials = $request->validate([
-            'name' => 'required|string',
-            'password' => 'required'
+            'nip' => ['required', 'String'],
+            'password' => ['required']
         ]);
+        $ingat = $request->remember ? true : false;
 
-        if (Auth::attempt($credentials)) {
+        if (Auth::attempt($credentials, $ingat)) {
             $request->session()->regenerate();
+
             return redirect()->intended('/dashboard');
         }
 
-        return back()->with('loginError', 'Login Failed!');
+        return back()->with('loginError', 'Login Failed!')->withErrors([
+            'nip' => 'Masukkan NIP dengan benar'
+        ]);
     }
 
     public function logout(Request $request)
@@ -37,6 +41,6 @@ class LoginController extends Controller
 
         request()->session()->regenerateToken();
 
-        return redirect('/login');
+        return redirect('/');
     }
 }

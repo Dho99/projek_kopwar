@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('nip')->unique();
             $table->string('name')->unique();
             $table->string('password');
-            $table->rememberToken();
+            $table->string('remember_token');
             $table->timestamps();
         });
     }

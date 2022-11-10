@@ -3,9 +3,10 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use Illuminate\Database\Seeder;
 use App\Models\User;
+use App\Models\Member;
 use App\Models\Products;
+use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -17,6 +18,8 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         User::factory(8)->create();
+
+        Member::factory(9)->create();
 
         Products::create([
             'nama_produk' => 'Minyak_Goreng',

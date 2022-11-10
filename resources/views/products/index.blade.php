@@ -11,7 +11,7 @@
         <div class="row g-4">
             @foreach($products as $product)
             <div class="col-lg-3">
-                <div class="card">
+                <div class="card" style="cursor: default">
                     <img src="..." class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">{{ $product->nama_produk }}</h5>
@@ -20,7 +20,7 @@
                             <div class="d-flex h-3px justify-content-center">
                                 <a href="#" class="btn bg-secondary align-items-center me-2"><span data-feather="minus-circle"></span></a>
                                 <form action="">
-                                    <input type="text" name="" id="" class="form-control h-3px w-10px text-center" value="{{ $product->jumlah_produk }}">
+                                    <input type="text" name="" id="" class="form-control h-3px w-10 text-center" value="{{ $product->jumlah_produk }}">
                                 </form>
                                 <a href="#" class="btn bg-warning align-items-center ms-2"><span data-feather="plus-circle"></span></a>
                             </div>
@@ -30,7 +30,7 @@
 
             @endforeach
 
-                <button class="btn btn-primary sticky-bottom w-100"><a href="" class="text-light text-decoration-none">Tambah Data Barang Baru</a></button>
+                <button class="btn btn-primary sticky-bottom w-10"><a href="" class="text-light text-decoration-none"><span data-feather="plus-circle" class="mb-1"></span> Tambah Data Barang Baru</a></button>
          
         </div>
     

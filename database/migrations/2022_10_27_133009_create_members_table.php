@@ -18,7 +18,8 @@ return new class extends Migration
             $table->string('niuptk')->unique();
             $table->string('name')->unique();
             $table->string('password');
-            $table->string('balance');
+            $table->string('simpanan');
+            $table->string('pinjaman');
             $table->timestamps();
         });
     }

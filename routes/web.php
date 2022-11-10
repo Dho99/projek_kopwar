@@ -7,7 +7,6 @@ use App\Http\Controllers\PinjamanController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\SimpananController;
 use App\Http\Controllers\DashboardController;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,23 +18,22 @@ use App\Http\Controllers\DashboardController;
 |
 */
 
-Route::get('/login', [LoginController::class, 'index']);
+Route::get('/', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);
-
 Route::post('/logout', [LoginController::class, 'logout']);
 
 Route::get('/orders', function () {
     return view('orders.index', [
         "title" => "Orders"
     ]);
-});
+})->middleware('auth');
 
-Route::get('/products', [ProductsController::class, 'list']);
+Route::get('/products', [ProductsController::class, 'list'])->middleware('auth');
 
-Route::get('/dashboard', [DashboardController::class, 'index']);
+Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
 
-Route::get('/simpanan', [SimpananController::class, 'index']);
+Route::get('/simpanan', [SimpananController::class, 'index'])->middleware('auth');
 
-Route::get('/pinjaman', [PinjamanController::class, 'index']);
+Route::get('/pinjaman', [PinjamanController::class, 'index'])->middleware('auth');
 
-Route::get('/members', [MemberController::class, 'index']);
+Route::get('/members', [MemberController::class, 'index'])->middleware('auth');
